@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>jQuery validator</title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<script src="../jquery-1.11.1.min.js"></script>
+<script src="../jquery.common/jquery.common.js"></script>
+<script src="jquery.validator.js"></script>
+</head>
+
+<body>
+	<form id="login-form" action="" method="post">
+		<dl>
+			<dt>通行证账号：</dt>
+			<dd>
+				<input id="username" name="username"
+					valid="|trim|require|min_length[4]|max_length[14]|username|pattern(/^[0-9]+$/,必须是数字)"
+					type="text" class="id" />
+			</dd>
+			<dd>
+				<input id="password" name="password"
+					valid="trim|require|min_length[4]|max_length[14]" type="text"
+					class="id" />
+			</dd>
+			<input type="submit" value="提交">
+		</dl>
+</form>
+
+<script>
+$(function(){
+	$("#login-form").validate();
+});
+</script>
+</body>
+</html>
